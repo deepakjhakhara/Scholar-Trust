@@ -5,6 +5,9 @@ import '../styles/Navbar.css';
 const Navbar = ({ onWalletConnect }) => {
   const [walletAddress, setWalletAddress] = useState('');
   const [isConnecting, setIsConnecting] = useState(false);
+  
+  // PDF report path - update this to your PDF file path
+  const reportPdfPath = '/reports/BlocChainProject-2.pdf';
 
   useEffect(() => {
     // Listen for account changes
@@ -37,6 +40,11 @@ const Navbar = ({ onWalletConnect }) => {
     return `${address.substring(0, 6)}...${address.substring(38)}`;
   };
 
+  const handleReportClick = () => {
+    // Open PDF in new tab
+    window.open(reportPdfPath, '_blank');
+  };
+
   return (
     <nav className="navbar">
       <div className="navbar-container">
@@ -50,6 +58,9 @@ const Navbar = ({ onWalletConnect }) => {
           <a href="#my-credentials" className="nav-link">My Credentials</a>
           <a href="#issue" className="nav-link">For Institutions</a>
           <a href="#students" className="nav-link">For Students</a>
+          <button onClick={handleReportClick} className="nav-link report-link">
+            Report
+          </button>
         </div>
         
         <button 
