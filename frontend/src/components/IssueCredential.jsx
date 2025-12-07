@@ -59,7 +59,7 @@ const IssueCredential = ({ contractAddress }) => {
 
       const response = await issueCredential(credentialData);
       
-      setResult(`✅ Credential Issued Successfully!
+      setResult(`Credential Issued Successfully!
 
 Token ID: ${response.tokenId}
 Transaction: ${response.transactionHash}
@@ -75,7 +75,7 @@ Block: ${response.blockNumber}`);
         ipfsURI: ''
       });
     } catch (error) {
-      setResult(`❌ Error: ${error.message}`);
+      setResult(`Error: ${error.message}`);
     } finally {
       setIsLoading(false);
     }

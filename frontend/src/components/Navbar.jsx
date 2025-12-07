@@ -27,9 +27,9 @@ const Navbar = ({ onWalletConnect }) => {
       if (onWalletConnect) {
         onWalletConnect(address, network, chainId);
       }
-      alert(`✅ Wallet connected successfully!\nNetwork: ${network} (${chainId})`);
+      alert(`Wallet connected successfully!\nNetwork: ${network} (${chainId})`);
     } catch (error) {
-      alert('❌ Error: ' + error.message);
+      alert('Error: ' + error.message);
     } finally {
       setIsConnecting(false);
     }

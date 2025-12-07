@@ -86,7 +86,7 @@ const VerifyCredential = () => {
                 ) : (
                   <>
                     <p className="result-status">
-                      {verificationResult.isValid && !verificationResult.data.revoked ? '✅ Valid Credential' : '⚠️ Invalid/Revoked Credential'}
+                      {verificationResult.isValid && !verificationResult.data.revoked ? 'Valid Credential' : 'Invalid/Revoked Credential'}
                     </p>
                     <div className="result-details">
                       <p><strong>Title:</strong> {verificationResult.data.title}</p>
@@ -96,7 +96,7 @@ const VerifyCredential = () => {
                       <p><strong>Issuer:</strong> {verificationResult.data.issuer}</p>
                       <p><strong>Issue Date:</strong> {formatDate(verificationResult.data.issueDate)}</p>
                       <p><strong>Expiry:</strong> {formatDate(verificationResult.data.expiryDate)}</p>
-                      <p><strong>Revoked:</strong> {verificationResult.data.revoked ? 'Yes ⚠️' : 'No ✅'}</p>
+                      <p><strong>Revoked:</strong> {verificationResult.data.revoked ? 'Yes' : 'No'}</p>
                       <p><strong>IPFS:</strong> {verificationResult.data.ipfsURI}</p>
                     </div>
                   </>
@@ -109,7 +109,7 @@ const VerifyCredential = () => {
             </div>
             
             <button className="qr-verify-btn" onClick={handleQRVerify}>
-              <span className="qr-icon">📷</span>
+              <span className="qr-icon"></span>
               Verify with QR Code
             </button>
           </div>
@@ -128,7 +128,7 @@ const VerifyCredential = () => {
               </div>
             ))}
 
-            <p className="credentials-note">💡 Click on a credential to verify it</p>
+            <p className="credentials-note">Click on a credential to verify it</p>
           </div>
         </div>
       </div>

@@ -52,9 +52,9 @@ const HomePage = () => {
       initializeContract(contractAddress);
       setIsContractSet(true);
       checkIssuerStatus(walletInfo.address);
-      alert('✅ Contract initialized successfully!');
+      alert('Contract initialized successfully!');
     } catch (error) {
-      alert('❌ Error initializing contract: ' + error.message);
+      alert('Error initializing contract: ' + error.message);
     }
   };
 
@@ -97,7 +97,7 @@ const HomePage = () => {
                 </li>
               </ol>
               <div className="setup-info">
-                <p>⚠️ Make sure you have MetaMask installed and are connected to the correct network</p>
+                <p>Make sure you have MetaMask installed and are connected to the correct network</p>
               </div>
             </div>
           </div>
@@ -123,7 +123,7 @@ const HomePage = () => {
               </div>
               
               <div className="next-step">
-                <h3>📝 Step 2: Set Contract Address</h3>
+                <h3>Step 2: Set Contract Address</h3>
                 <p>Enter your deployed smart contract address to continue</p>
                 <form onSubmit={handleContractAddressSubmit} className="contract-form">
                   <input
@@ -157,7 +157,7 @@ const HomePage = () => {
               {isIssuer && (
                 <>
                   <span className="separator">|</span>
-                  <span className="issuer-badge">✨ Issuer Role</span>
+                  <span className="issuer-badge">Issuer Role</span>
                 </>
               )}
             </div>
