@@ -119,7 +119,7 @@ const VerifyCredential = () => {
             
             {myCredentials.map((cred) => (
               <div key={cred.id} className="credential-card" onClick={() => setCredentialInput(cred.id.toString())}>
-                <div className="credential-icon">🎓</div>
+                <div className="credential-icon"></div>
                 <div className="credential-info">
                   <h4 className="credential-name">{cred.title}</h4>
                   <p className="credential-issuer">Issued by: {cred.issuer} on {cred.date}</p>
