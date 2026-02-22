@@ -25,6 +25,7 @@ The application is a React + Vite frontend that connects to an Ethereum smart co
 
 ## Repository Structure
 
+```text
 .
 ├── README.md
 └── frontend/
@@ -35,6 +36,7 @@ The application is a React + Vite frontend that connects to an Ethereum smart co
     │   └── styles/          # CSS files
     ├── index.html           # includes ethers script
     └── package.json
+```
 
 ## Prerequisites
 
