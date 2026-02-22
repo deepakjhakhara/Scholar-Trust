@@ -1,40 +1,98 @@
-## 4.6 User Workflows
+# Scholar Trust
 
-### **Credential Issuance**
-1. User connects their wallet  
-2. Contract instance is initialized  
-3. User fills out the credential issuance form  
-4. User reviews the MetaMask transaction  
-5. User approves and signs the transaction  
-6. System returns a **Token ID** as confirmation  
+**Decentralised System For Student Records**
 
-### **Credential Verification**
-1. User enters a Token ID  
-2. System performs a free read-operation on the blockchain  
-3. Credential details and validity status are displayed  
+Scholar Trust is a decentralized application for issuing, storing, and verifying student academic records on blockchain infrastructure.
 
----
+## Architecture
 
-## 5. Development and Deployment
+- **Frontend (`frontend/`)**: React + Vite dApp UI (MetaMask integration)
+- **Backend (root)**: Solidity smart contract + Truffle deployment/test toolchain
 
-### 5.1 Technology Stack Summary
+## Prerequisites
 
-| Layer          | Technology          | Purpose                              |
-|----------------|----------------------|--------------------------------------|
-| Smart Contract | Solidity             | Credential logic and storage         |
-| Blockchain     | Ethereum (Sepolia)   | Transaction processing               |
-| Frontend       | React 19.2.0         | User interface                       |
-| Web3 Library   | Ethers.js 5.7.2       | Blockchain interaction               |
-| Wallet         | MetaMask             | Identity and signing                 |
-| Build Tool     | Vite                 | Development and bundling             |
-| Deployment     | Vercel               | Frontend hosting                     |
+- Node.js 18+
+- npm
+- MetaMask extension
+- Ganache (CLI or GUI)
 
----
+## 1) Install dependencies
 
-## 5.2 Development Commands
+### Backend (Truffle + contracts)
 
 ```bash
-npm install      # Install dependencies  
-npm run dev      # Run development server  
-npm run build    # Create production build  
-npm run preview  # Preview production build  
+npm install
+```
+
+### Frontend
+
+```bash
+cd frontend
+npm install
+cd ..
+```
+
+## 2) Start local blockchain (Ganache)
+
+```bash
+npm run ganache
+```
+
+This starts a local chain on `http://127.0.0.1:8545` (chain ID `1337`).
+
+## 3) Deploy contract with Truffle
+
+In a new terminal:
+
+```bash
+npm run migrate:reset
+```
+
+This compiles and deploys `StudentRecordNFT.sol` to the `development` network configured in `truffle-config.js`.
+
+## 4) Sync ABI to frontend
+
+```bash
+npm run sync:abi
+```
+
+This updates `frontend/src/utils/contractABI.js` from the compiled Truffle artifact.
+
+> One-command local deployment:
+
+```bash
+npm run deploy:local
+```
+
+## 5) Configure MetaMask for Ganache
+
+- Network name: `Ganache Local`
+- RPC URL: `http://127.0.0.1:8545`
+- Chain ID: `1337`
+- Currency: `ETH`
+- Import one Ganache account private key
+
+## 6) Run frontend
+
+```bash
+cd frontend
+npm run dev
+```
+
+Open the shown local Vite URL.
+
+## 7) Initialize contract in app
+
+1. Click **Connect Wallet**.
+2. Paste deployed contract address from Truffle output.
+3. Click **Initialize Contract**.
+
+## Useful commands
+
+```bash
+npm run compile         # Compile contracts
+npm run migrate         # Deploy without reset
+npm run migrate:reset   # Re-deploy from scratch
+npm run test            # Run Truffle tests
+npm run sync:abi        # Update frontend ABI from build artifact
+```

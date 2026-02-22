@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { connectWallet, getWalletAddress, onAccountsChanged } from '../utils/web3';
+import { connectWallet, onAccountsChanged } from '../utils/web3';
 import '../styles/Navbar.css';
 
 const Navbar = ({ onWalletConnect }) => {
@@ -50,12 +50,12 @@ const Navbar = ({ onWalletConnect }) => {
       <div className="navbar-container">
         <div className="navbar-logo">
           <span className="logo-icon">🔗</span>
-          <span className="logo-text">VeriChain</span>
+          <span className="logo-text">Scholar Trust</span>
         </div>
         
         <div className="navbar-links">
           <a href="#verify" className="nav-link">Verify</a>
-          <a href="#my-credentials" className="nav-link">My Credentials</a>
+          <a href="#my-credentials" className="nav-link">Student Records</a>
           <a href="#issue" className="nav-link">For Institutions</a>
           <a href="#students" className="nav-link">For Students</a>
           <button onClick={handleReportClick} className="nav-link report-link">

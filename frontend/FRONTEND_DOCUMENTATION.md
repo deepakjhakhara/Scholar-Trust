@@ -1,4 +1,4 @@
-# VeriChain Frontend Application - Comprehensive Documentation
+# Scholar Trust - Decentralised System For Student Records
 
 ## Table of Contents
 1. [Overview](#overview)
@@ -13,7 +13,7 @@
 
 ## Overview
 
-VeriChain is a decentralized application (dApp) built with React that enables educational institutions and organizations to issue blockchain-based credentials (certificates, diplomas, awards) and allows anyone to verify these credentials trustlessly on the Ethereum blockchain. The frontend provides an intuitive interface for connecting to Web3 wallets, issuing credentials as NFTs, and verifying their authenticity.
+Scholar Trust is a decentralized application (dApp) built with React that enables educational institutions and organizations to issue blockchain-based student records (certificates, transcripts, awards) and allows anyone to verify these records trustlessly on the Ethereum blockchain. The frontend provides an intuitive interface for connecting to Web3 wallets, issuing student records as NFTs, and verifying their authenticity.
 
 ### Key Features
 - **Web3 Wallet Integration**: Seamless MetaMask connection
@@ -311,7 +311,7 @@ No Connection → Wallet Connected → Contract Initialized → Full Access
 ### Step-by-Step Usage
 
 #### **Step 1: Connect Wallet**
-1. Navigate to VeriChain application
+1. Navigate to Scholar Trust application
 2. Click **"Connect Wallet"** button in navbar
 3. MetaMask popup appears
 4. Select account and click **"Connect"**
@@ -589,7 +589,7 @@ useEffect(() => {
 
 ## Conclusion
 
-The VeriChain frontend provides a seamless bridge between users and the Ethereum blockchain through:
+The Scholar Trust frontend provides a seamless bridge between users and the Ethereum blockchain through:
 - **Intuitive wallet connection** via MetaMask
 - **Direct smart contract interaction** using Ethers.js
 - **Clear user feedback** for all blockchain operations

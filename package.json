@@ -1,0 +1,22 @@
+{
+  "name": "scholar-trust",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Scholar Trust backend contracts and deployment tooling",
+  "scripts": {
+    "ganache": "ganache --chain.chainId 1337 --wallet.totalAccounts 10",
+    "compile": "truffle compile",
+    "migrate": "truffle migrate --network development",
+    "migrate:reset": "truffle migrate --reset --network development",
+    "test": "truffle test",
+    "sync:abi": "node scripts/syncAbi.js",
+    "deploy:local": "npm run migrate:reset && npm run sync:abi"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^5.4.0"
+  },
+  "devDependencies": {
+    "ganache": "^7.9.2",
+    "truffle": "^5.11.5"
+  }
+}
