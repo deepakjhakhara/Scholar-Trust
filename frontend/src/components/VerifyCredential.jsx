@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from 'react';
-import { verifyCredential, getContract, getTotalCredentials } from '../utils/web3';
+import React, { useState } from 'react';
+import { verifyCredential, getContract } from '../utils/web3';
 import '../styles/VerifyCredential.css';
 
 const VerifyCredential = () => {
   const [credentialInput, setCredentialInput] = useState('');
   const [isVerifying, setIsVerifying] = useState(false);
   const [verificationResult, setVerificationResult] = useState(null);
-  const [myCredentials, setMyCredentials] = useState([
+  const [myCredentials] = useState([
     {
       id: 0,
       title: 'Bachelor in Computer Science',
@@ -23,7 +23,7 @@ const VerifyCredential = () => {
 
   const handleVerify = async () => {
     if (!credentialInput) {
-      alert('Please enter a credential Token ID');
+      alert('Please enter a student record Token ID');
       return;
     }
 
@@ -58,12 +58,12 @@ const VerifyCredential = () => {
   return (
     <section className="verify-credential" id="verify">
       <div className="section-container">
-        <h2 className="section-title">Access and Verify Your Achievements</h2>
+        <h2 className="section-title">Access and Verify Student Records</h2>
         
         <div className="verify-content">
           <div className="verify-form">
-            <h3 className="verify-subtitle">Verify a Credential</h3>
-            <label htmlFor="credentialInput">Credential Token ID</label>
+            <h3 className="verify-subtitle">Verify a Student Record</h3>
+            <label htmlFor="credentialInput">Student Record Token ID</label>
             <input
               type="text"
               id="credentialInput"
@@ -86,7 +86,7 @@ const VerifyCredential = () => {
                 ) : (
                   <>
                     <p className="result-status">
-                      {verificationResult.isValid && !verificationResult.data.revoked ? 'Valid Credential' : 'Invalid/Revoked Credential'}
+                      {verificationResult.isValid && !verificationResult.data.revoked ? 'Valid Student Record' : 'Invalid/Revoked Student Record'}
                     </p>
                     <div className="result-details">
                       <p><strong>Title:</strong> {verificationResult.data.title}</p>
@@ -115,7 +115,7 @@ const VerifyCredential = () => {
           </div>
           
           <div className="credentials-list">
-            <h3 className="credentials-title">My Credentials</h3>
+            <h3 className="credentials-title">My Student Records</h3>
             
             {myCredentials.map((cred) => (
               <div key={cred.id} className="credential-card" onClick={() => setCredentialInput(cred.id.toString())}>
@@ -128,7 +128,7 @@ const VerifyCredential = () => {
               </div>
             ))}
 
-            <p className="credentials-note">Click on a credential to verify it</p>
+            <p className="credentials-note">Click on a student record to verify it</p>
           </div>
         </div>
       </div>

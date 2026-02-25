@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { issueCredential, getContract } from '../utils/web3';
 import '../styles/IssueCredential.css';
 
-const IssueCredential = ({ contractAddress }) => {
+const IssueCredential = () => {
   const [formData, setFormData] = useState({
     recipientAddress: '',
     credentialType: '0',
@@ -59,8 +59,7 @@ const IssueCredential = ({ contractAddress }) => {
 
       const response = await issueCredential(credentialData);
       
-      setResult(`Credential Issued Successfully!
-
+      setResult(`Student Record Issued Successfully!
 Token ID: ${response.tokenId}
 Transaction: ${response.transactionHash}
 Block: ${response.blockNumber}`);
@@ -84,8 +83,7 @@ Block: ${response.blockNumber}`);
   return (
     <section className="issue-credential" id="issue">
       <div className="section-container">
-        <h2 className="section-title">Issue Verifiable Credentials</h2>
-        
+        <h2 className="section-title">Issue Student Records</h2>        
         <form className="credential-form" onSubmit={handleSubmit}>
           <div className="form-row">
             <div className="form-group">
@@ -102,7 +100,7 @@ Block: ${response.blockNumber}`);
             </div>
             
             <div className="form-group">
-              <label htmlFor="credentialType">Credential Type</label>
+              <label htmlFor="credentialType">Record Type</label>
               <select
                 id="credentialType"
                 name="credentialType"
@@ -119,7 +117,7 @@ Block: ${response.blockNumber}`);
           
           <div className="form-row">
             <div className="form-group">
-              <label htmlFor="credentialTitle">Credential Title</label>
+              <label htmlFor="credentialTitle">Record Title</label>
               <input
                 type="text"
                 id="credentialTitle"
@@ -171,7 +169,7 @@ Block: ${response.blockNumber}`);
           </div>
           
           <button type="submit" className="submit-btn" disabled={isLoading}>
-            {isLoading ? 'Issuing Credential...' : 'Generate & Issue Credential'}
+            {isLoading ? 'Issuing Record...' : 'Generate & Issue Record'}
           </button>
 
           {result && (

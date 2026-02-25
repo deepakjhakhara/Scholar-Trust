@@ -6,10 +6,10 @@ const Hero = () => {
     <section className="hero">
       <div className="hero-content">
         <h1 className="hero-title">
-          Immutable Academic Credentials on the Blockchain
+          Decentralised System For Student Records
         </h1>
         <p className="hero-subtitle">
-          Securing academic records and empowering students with verifiable, student-owned credentials.
+          Secure, tamper-resistant student records with decentralized ownership and trustless verification.
         </p>
         <div className="hero-buttons">
           <button className="btn-primary">For Institutions</button>

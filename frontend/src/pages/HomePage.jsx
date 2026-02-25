@@ -5,9 +5,9 @@ import IssueCredential from '../components/IssueCredential';
 import VerifyCredential from '../components/VerifyCredential';
 import { initializeContract, checkIsIssuer } from '../utils/web3';
 import '../styles/HomePage.css';
-
+import defaultContractAddress from '../config/defaultContractAddress.json';
 const HomePage = () => {
-  const [contractAddress, setContractAddress] = useState('0x8Dade3E51a55081855C812f2ba0B6a860714d968');
+  const [contractAddress, setContractAddress] = useState(defaultContractAddress.development || '');
   const [isContractSet, setIsContractSet] = useState(false);
   const [walletInfo, setWalletInfo] = useState(null);
   const [isIssuer, setIsIssuer] = useState(false);
@@ -72,7 +72,7 @@ const HomePage = () => {
             <div className="setup-card">
               <div className="setup-icon">🔗</div>
               <h2>Connection Setup Required</h2>
-              <p>To use VeriChain, you need to:</p>
+              <p>To use Scholar Trust, you need to:</p>
               <ol className="setup-steps">
                 <li>
                   <span className="step-number">1</span>
@@ -91,8 +91,8 @@ const HomePage = () => {
                 <li>
                   <span className="step-number">3</span>
                   <div className="step-content">
-                    <strong>Start Using VeriChain</strong>
-                    <p>Issue and verify credentials on the blockchain</p>
+                    <strong>Start Using ScholarTrust</strong>
+                    <p>Issue and verify student records on the blockchain</p>
                   </div>
                 </li>
               </ol>
@@ -164,7 +164,7 @@ const HomePage = () => {
           </div>
 
           {/* Main Functionality - Only show when fully connected */}
-          <IssueCredential contractAddress={contractAddress} />
+          <IssueCredential />
           <VerifyCredential />
         </>
       )}
